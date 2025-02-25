@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HG9R LTD - IT Accessories</title>
+  <title>HG9R LTD - Technology Solutions</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,28 +11,104 @@
       padding: 0;
       background: #f7f7f7;
       color: #333;
+      transition: background-color 0.5s ease, color 0.5s ease;
     }
     .container {
-      max-width: 800px;
-      margin: 50px auto;
+      max-width: 900px;
+      margin: 40px auto;
       padding: 20px;
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    h1 {
+    h1, h2 {
       color: #00539C;
     }
-    p {
-      line-height: 1.6;
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo img {
+      max-width: 150px;
+    }
+    .toggle-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #00539C;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #003d73;
+    }
+    a.linkedin {
+      color: #0077b5;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.linkedin:hover {
+      text-decoration: underline;
+    }
+    /* Dark mode styles */
+    .dark-mode {
+      background-color: #333;
+      color: #f7f7f7;
+    }
+    .dark-mode .container {
+      background: #444;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .dark-mode h1, .dark-mode h2 {
+      color: #a7c7e7;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Welcome to HG9R LTD</h1>
-    <p>HG9R LTD offers premium IT accessories, including memory sticks, cables, adapters, and other essential tech gear. We focus on quality and reliability, catering to both tech enthusiasts and professionals.</p>
+    <div class="logo">
+      <!-- Placeholder for the HG9R LTD logo -->
+      <img src="https://via.placeholder.com/150?text=HG9R+LTD+Logo" alt="HG9R LTD Logo">
+    </div>
+    <h1>HG9R LTD</h1>
+    <p><strong>Retail Appliances, Electrical, and Electronic Equipment</strong> | London | 0-1 employees</p>
+    
+    <h2>Overview</h2>
+    <p>
+      At HG9R Shop, we're more than just a retailer; we're a versatile technology solutions provider.
+      With a focus on both Business-to-Consumer and Business-to-Business markets, we specialise in delivering
+      a comprehensive range of IT, Electrical, and Electronic Equipment. Our online store showcases a curated selection 
+      for individual consumers, while our custom quoting service caters to the specific needs of businesses and academic institutions.
+      From computers and smart screens to security cameras and state-of-the-art video conferencing solutions,
+      we are committed to providing products that empower our clients to achieve more.
+      Partner with HG9R Shop for tailored, efficient, and cutting-edge technology solutions.
+    </p>
+    
+    <!-- LinkedIn Section -->
+    <p style="text-align: center;">
+      Follow us on LinkedIn: 
+      <a class="linkedin" href="https://www.linkedin.com/company/hg9r-shop/" target="_blank">
+        HG9R LTD on LinkedIn
+      </a>
+    </p>
+    
+    <!-- Dark Mode Toggle -->
+    <div class="toggle-container">
+      <button id="toggleTheme">Toggle Dark Mode</button>
+    </div>
   </div>
+
+  <script>
+    // JavaScript to toggle dark mode
+    const toggleButton = document.getElementById('toggleTheme');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
 </body>
 </html>
-
