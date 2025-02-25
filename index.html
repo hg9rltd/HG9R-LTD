@@ -20,19 +20,19 @@
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .logo img {
+      max-width: 150px;
+      border-radius: 8px;
     }
     h1, h2 {
       color: #00539C;
     }
-    .logo {
-      text-align: center;
-      margin-bottom: 20px;
+    p {
+      line-height: 1.6;
     }
-    .logo img {
-      max-width: 150px;
-    }
-    .toggle-container {
-      text-align: center;
+    .toggle-container, .interactive-container {
       margin-top: 20px;
     }
     button {
@@ -43,16 +43,22 @@
       color: #fff;
       border: none;
       border-radius: 5px;
+      margin: 5px;
     }
     button:hover {
       background-color: #003d73;
     }
-    a.linkedin {
+    footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #555;
+    }
+    footer a {
       color: #0077b5;
       text-decoration: none;
       font-weight: bold;
     }
-    a.linkedin:hover {
+    footer a:hover {
       text-decoration: underline;
     }
     /* Dark mode styles */
@@ -72,11 +78,13 @@
 <body>
   <div class="container">
     <div class="logo">
-      <!-- Placeholder for the HG9R LTD logo -->
-      <img src="https://via.placeholder.com/150?text=HG9R+LTD+Logo" alt="HG9R LTD Logo">
+      <!-- Logo using provided base64 -->
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAAB3RJTUUH5woWCzUynuTtrwAAd75JREFUeNrtfXd8HOWZ/3dm+652V1p1WdWSLFuy3CU33Au4YRtMCzUEkly4hEDujsslISQhyaWRXwghBAKXg9AhEEIzNjbuuHfLsnqvu6vtdeb9/bE7o9nVVhXb5ObLZ5F3Z+adtz7v8z4VECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIEDE6/H/Qj2gG1kqEjwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMy0xMC0yMlQxMTo1Mzo1MCswMDowMJEGZIYAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjMtMTAtMjJUMTE6NTM6NTArMDA6MDDgW9w6AAAAV3pUWHRSYXcgcHJvZmlsZSB0eXBlIGlwdGMAAHic4/IMCHFWKCjKT8vMSeVSAAMjCy5jCxMjE0uTFAMTIESANMNkAyOzVCDL2NTIxMzEHMQHy4BIoEouAOoXEXTyQjWVAAAAAElFTkSuQmCC" alt="HG9R LTD Logo">
     </div>
     <h1>HG9R LTD</h1>
-    <p><strong>Retail Appliances, Electrical, and Electronic Equipment</strong> | London | 0-1 employees</p>
+    <p>
+      <strong>Retail Appliances, Electrical, and Electronic Equipment</strong> | London | 0-1 employees
+    </p>
     
     <h2>Overview</h2>
     <p>
@@ -86,28 +94,47 @@
       for individual consumers, while our custom quoting service caters to the specific needs of businesses and academic institutions.
       From computers and smart screens to security cameras and state-of-the-art video conferencing solutions,
       we are committed to providing products that empower our clients to achieve more.
-      Partner with HG9R Shop for tailored, efficient, and cutting-edge technology solutions.
+      Partner with us for tailored, efficient, and cutting-edge technology solutions.
     </p>
     
-    <!-- LinkedIn Section -->
-    <p style="text-align: center;">
-      Follow us on LinkedIn: 
-      <a class="linkedin" href="https://www.linkedin.com/company/hg9r-shop/" target="_blank">
-        HG9R LTD on LinkedIn
-      </a>
-    </p>
-    
-    <!-- Dark Mode Toggle -->
+    <!-- Interactive Elements -->
     <div class="toggle-container">
       <button id="toggleTheme">Toggle Dark Mode</button>
     </div>
+    <div class="interactive-container">
+      <button id="surpriseBtn">Surprise Me!</button>
+      <p id="factDisplay" style="margin-top: 15px; font-style: italic;"></p>
+    </div>
+    
+    <!-- Footer with LinkedIn Link -->
+    <footer>
+      <p>Discover more about our company on <a href="https://www.linkedin.com/company/hg9r-shop/" target="_blank">LinkedIn</a>.</p>
+    </footer>
   </div>
 
   <script>
-    // JavaScript to toggle dark mode
+    // Toggle dark mode
     const toggleButton = document.getElementById('toggleTheme');
     toggleButton.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
+    });
+
+    // Array of fun tech facts for the "Surprise Me" button
+    const techFacts = [
+      "Did you know? The first computer mouse was made of wood!",
+      "Fun fact: The term 'bug' originated from an actual moth causing a glitch.",
+      "Tech trivia: Over 90% of the world's data was generated in the last two years.",
+      "Interesting: The first 1GB hard drive, introduced in 1980, weighed over 500 pounds!",
+      "Cool fact: 'Hello, World!' was first used in a 1978 programming book."
+    ];
+
+    const surpriseBtn = document.getElementById('surpriseBtn');
+    const factDisplay = document.getElementById('factDisplay');
+
+    surpriseBtn.addEventListener('click', () => {
+      // Get a random tech fact
+      const randomFact = techFacts[Math.floor(Math.random() * techFacts.length)];
+      factDisplay.textContent = randomFact;
     });
   </script>
 </body>
